@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-moll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/27 10:23:30 by ade-moll          #+#    #+#             */
-/*   Updated: 2021/01/27 15:39:21 by ade-moll         ###   ########.fr       */
+/*   Created: 2021/01/28 12:36:31 by ade-moll          #+#    #+#             */
+/*   Updated: 2021/01/28 16:22:41 by ade-moll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_power(int nb, int power)
+#include <unistd.h>
+void ft_putchar(char c)
 {
-	int result;
+	write(1, &c, 1);
+}
 
-	result = 1;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	while (power > 0)
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		result *= nb;
-		power--;
+	i++;
 	}
-	return (result);
+	while (i >= 0)
+	{
+		ft_putchar(str[i]);
+		i--;
+	}
+}
+
+int main()
+{
+	char chaine[] = "Salut";
+	ft_putstr(chaine);
+	return (0);
 }
