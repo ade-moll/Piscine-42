@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-moll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/01 11:49:12 by ade-moll          #+#    #+#             */
-/*   Updated: 2021/02/01 13:47:16 by ade-moll         ###   ########.fr       */
+/*   Created: 2021/01/28 08:49:39 by ade-moll          #+#    #+#             */
+/*   Updated: 2021/02/01 11:28:10 by ade-moll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_H
-# define FT_H
 
-# include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c);
-void	ft_swap(int *a, int *b);
-void	ft_putstr(char *str);
-int		ft_strlen(char *str);
-int		ft_strcmp(char *s1, char *s2);
+char	*ft_strdup(char *src)
+{
+	char	*copy;
+	int		i;
+	int		j;
 
-#endif
+	i = 0;
+	j = 0;
+	while (src[i] != '\0')
+	{
+		i++;
+	}
+	copy = (char *)malloc(sizeof(*copy) * (i + 1));
+	while (j < i)
+	{
+		copy[j] = src[j];
+		j++;
+	}
+	copy[j] = '\0';
+	return (copy);
+}
