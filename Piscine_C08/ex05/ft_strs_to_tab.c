@@ -6,7 +6,7 @@
 /*   By: ade-moll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 15:57:19 by ade-moll          #+#    #+#             */
-/*   Updated: 2021/02/02 09:19:16 by ade-moll         ###   ########.fr       */
+/*   Updated: 2021/02/02 09:25:09 by ade-moll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,17 +71,6 @@ struct	s_stock_str		*ft_strs_to_tab(int ac, char **av)
 #include <unistd.h>
 int	main(int argc, char **argv)
 {
-	int i;
-
-	i = 0;
-	while (argv[i].str != '\0')
-	{
-	ft_putstr(argv[i].str);
-	ft_putchar('\n');
-	ft_putnbr(argv[i].size);
-	ft_putchar('\n');
-	ft_putstr(argv[i].copy);
-	ft_putchar('\n');
-	i++;
-	}
+	ft_show_tab(ft_strs_to_tab(argc, argv));
+	return (0);
 }

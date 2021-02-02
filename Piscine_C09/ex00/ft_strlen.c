@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-moll <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/21 11:16:32 by ade-moll          #+#    #+#             */
-/*   Updated: 2021/02/02 14:14:38 by ade-moll         ###   ########.fr       */
+/*   Created: 2021/01/25 15:22:56 by ade-moll          #+#    #+#             */
+/*   Updated: 2021/02/01 12:53:51 by ade-moll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
+int	ft_strlen(char *str)
 {
 	int i;
 
 	i = 0;
 	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
 		i++;
-	}
+	return (i);
 }
